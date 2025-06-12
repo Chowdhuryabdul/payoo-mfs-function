@@ -10,6 +10,10 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
     }
     if(chasedOutPin === 1234){
         const existingAmount = getTextFieldById('existing-amount');
+        if(cashedOutAmount > existingAmount){
+            alert ('you do not have enough balance to cash out')
+            return
+        }
         const updatedAmount = existingAmount - cashedOutAmount;
         // console.log(updatedAmount);
         document.getElementById('existing-amount').innerText = updatedAmount
